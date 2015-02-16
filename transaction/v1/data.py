@@ -34,7 +34,7 @@ class Data(ApplicationSession):
     def is_markable(self, pos):
         try:
             assert self.markables[pos]
-        except IndexError, AssertionError:
+        except (IndexError, AssertionError):
             return False
         else:
             return True 
@@ -63,6 +63,10 @@ class Data(ApplicationSession):
         self.position = pos
         
         print('Position: {}'.format(self.position))
+        
+    @wamp.register(u'data.sth')
+    def sth(self):
+        print('Something')
         
         
 if __name__ == "__main__":

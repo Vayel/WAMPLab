@@ -43,6 +43,9 @@ class Locator(ApplicationSession):
                 'The pos {} does not exist.'.format(next_pos)
             )
         
+        # Always done    
+        self.call('data.sth')
+        
         
 if __name__ == "__main__":
     print('Starting Locator component...')
