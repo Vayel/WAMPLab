@@ -1,9 +1,44 @@
-**Objectif :** faire des transactions du style MySQL. Par exemple :
+**Objectif :**
 
-* Si ok(A) et ok(B)
-    * faire(A)
-    * faire(B)
-* Faire(C)
+* Faire (A et B)
+* Faire C
+
+Au lieu de ça :
+
+* Si peut faire A et peut faire B
+    * faire A
+    * faire B
+* Faire C
+
+Par exemple :
+
+```python
+and(
+    obj.set_attr1(val1),
+    obj.set_attr2(val2, val3)
+)
+
+set_attr3(val4)
+```
+
+Au lieu de :
+
+```python
+if obj.check_attr1(val1) and obj.check_attr2(val2, val3):
+    obj.set_attr1(val1)
+    obj.set_attr2(val2, val3)
+elif not obj.check_attr1(val1):
+    raise Exception("Error with attr1")
+else:
+    raise Exception("Error with attr2")
+    
+if obj.check_attr3(val4):
+    obj.set_attr3(val4)
+else:
+    raise Exception("Error with attr3")
+```
+
+Bien sûr, dans le cadre asynchrone de WAMP.
 
 **Exemple pris pour le code :** 
 
