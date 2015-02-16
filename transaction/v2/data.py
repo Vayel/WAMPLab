@@ -4,9 +4,13 @@ from autobahn import wamp
 from autobahn.twisted.wamp import ApplicationSession
 from autobahn.twisted.wamp import ApplicationRunner
 
+from tools import register_generator
+
+
 
 class PositionError(ValueError):
     pass
+
 
 class Data(ApplicationSession):
 
@@ -32,7 +36,7 @@ class Data(ApplicationSession):
     def get_position(self):
         return self.position
     
-    @wamp.register(u'data.mark_pos')    
+    @register_generator(u'data.mark_pos')    
     def mark_pos(self, pos):
         try:
             assert self.markables[pos]
@@ -47,7 +51,7 @@ class Data(ApplicationSession):
         
         print('Positions: {}'.format(self.positions))
         
-    @wamp.register(u'data.set_position')    
+    @register_generator(u'data.set_position')    
     def set_position(self, pos):
         try:
             self.positions[pos]
