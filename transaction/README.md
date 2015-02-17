@@ -113,12 +113,13 @@ Oui, c'est débile. Mais ça illustre simplement le problème.
 
 ### Version 1
 
-Avec des `if`.
+Avec des `if` : verbeux et pas Pythonique.
 
 ### Version 2
 
-Avec des `yield`.
+Avec des `yield` : compliqué.
 
 ### Version 3
 
-Avec des `try`.
+Avec des `try` : bien, mais il manque une interface pour éviter le code 
+spaghetti.
