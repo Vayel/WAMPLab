@@ -1,4 +1,6 @@
-**Objectif :**
+# Transactions
+
+## Objectif
 
 * Faire (A et B)
 * Faire C
@@ -40,7 +42,7 @@ else:
 
 Bien sûr, dans le cadre asynchrone de WAMP.
 
-**Exemple pris pour le code :** 
+## Exemple pris pour le code :
 
 Un composant `Data` se charge de manipuler les 
 données, partagées avec les autres composants. Ici, il s'agit simplement d'un 
@@ -106,3 +108,17 @@ positions | `['marked', 'marked', '', '']`
 foo | `4`
 
 Oui, c'est débile. Mais ça illustre simplement le problème.
+
+## Le code
+
+### Version 1
+
+Avec des `if`.
+
+### Version 2
+
+Avec des `yield`.
+
+### Version 3
+
+Avec des `try`.
